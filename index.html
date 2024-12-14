@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnahÍ Y Cesar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="invitacion">
+    <div class="header animar">
+        <img src="fondo.jpg" alt="background" class="background">
+        <div class="overlay animar">
+            <h1>Anahí & César</h1>
+        </div>
+    </div>
+
+    <div class="contenido animar">
+      <audio controls>
+        <source src="cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta el reproductor de audio.
+      </audio>
+      <h2>¡Nos casamos!</h2>
+      <p>
+        Nos encantaría que seas parte de este momento tan especial para nosotros. <br>
+        ¡Falta poco para el gran día y queremos celebrarlo contigo!
+      </p>
+      <div class="fecha">
+        <p class="fecha-principal">22 | Febrero | 2025</p>
+      </div>
+      <div class="contador">
+        <div class="contador-item">
+          <span id="dias">40</span>
+          <p>Días</p>
+        </div>
+        <div class="contador-item">
+          <span id="horas">22</span>
+          <p>Horas</p>
+        </div>
+        <div class="contador-item">
+          <span id="minutos">48</span>
+          <p>Minutos</p>
+        </div>
+        <div class="contador-item">
+          <span id="segundos">30</span>
+          <p>Segundos</p>
+        </div>
+      </div>
+      <!-- Nota de evento solo para adultos -->
+      <p style="margin-top: 20px; font-size: 14px; color: #666; font-style: italic;">
+        *Evento solo para adultos. Agradecemos su comprensión.*
+      </p>
+      
+      <!-- Botón de Confirmación -->
+        <div style="text-align: center; margin-top: 20px;">
+          <a href="https://forms.gle/kMZ7o5rKskeNRbjW9" target="_blank">
+          <button class="btn-mapa">CONFIRMACION</button>
+        </a>
+        </div>
+    </div>
+
+  <div class="seccion ceremonia animar">
+    <img src="anillos.png" alt="Icono de anillos" class="icono">
+    <h2>CEREMONIA</h2>
+    <p class="lugar">Iglesia Ríos de Agua Viva Lo Mejor del Trigo <br> Te esperamos el</p>
+    <div class="fecha-hora">
+      <span>22 FEB</span>
+      <span>|</span>
+      <span>15:00 HRS</span>
+    </div>
+    <p class="direccion">
+      Rubén Amaya 821, Lazaro Cardenas,<br>
+      22510 Tijuana, B.C.
+    </p>
+    <a href="https://www.google.com/maps?q=Rubén+Amaya+821,+Lazaro+Cardenas,+22510+Tijuana,+B.C." target="_blank">
+      <button class="btn-mapa">MAPA</button>
+    </a>
+  </div>
+  
+  <div class="seccion recepcion animar">
+    <img src="copas.png" alt="Icono de copas" class="icono">
+    <h2>RECEPCIÓN</h2>
+    <p class="lugar">Burócratas Salón Social <br> ¡Celebremos juntos!</p>
+    <div class="fecha-hora">
+      <span>22 FEB</span>
+      <span>|</span>
+      <span>18:00 HRS</span>
+    </div>
+    <p class="direccion">
+      Calle Hermenegildo Galeana 8350, Zona Centro,<br>
+      22000 Tijuana, B.C.
+    </p>
+    <a href="https://www.google.com/maps?q=Calle+Hermenegildo+Galeana+8350,+Zona+Centro,+22000+Tijuana,+B.C." target="_blank">
+      <button class="btn-mapa">MAPA</button>
+
+    </a>
+  </div>
+</div>
+  
+
+  <script>
+    // Definir el observador
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Cuando el elemento entra en la vista, añadir la clase para la animación
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target); // Deja de observar el elemento después de que se haya animado
+            }
+        });
+    }, {
+        threshold: 0.5  // Solo cuando el 50% del elemento es visible
+    });
+
+    // Seleccionamos todos los elementos que queremos animar
+    document.querySelectorAll('.animar').forEach(element => {
+        observer.observe(element); // Empezamos a observar cada elemento
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
